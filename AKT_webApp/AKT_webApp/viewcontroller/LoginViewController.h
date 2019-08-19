@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  LoginViewController.h
 //  AKT_webApp
 //
 //  Created by 常永梅 on 2019/8/19.
@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "AKT_BaseViewVC.h"
 
-@interface ViewController : AKT_BaseViewVC
+NS_ASSUME_NONNULL_BEGIN
 
+@interface LoginViewController : AKT_BaseViewVC
 
 @end
 
+NS_ASSUME_NONNULL_END

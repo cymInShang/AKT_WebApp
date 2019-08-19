@@ -1,0 +1,112 @@
+//
+//  PrefixHeader.pch
+//  AKT_webApp
+//
+//  Created by 常永梅 on 2019/8/19.
+//  Copyright © 2019 常永梅. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "AppDelegate.h"
+
+// Category
+#import "UIImage+Hex.h"
+#import "UIColor+Hex.h"
+#import "NSString+Hex.h"
+//#import "UIViewController+MSCYGesture.h"
+#import "UIImageView+MSSDWebImage.h"
+#import "UILabel+MSLabel.h"
+#import "UITextView+Placeholder.h"
+#import "UITextView+MSPlaceholder.h"
+#import "UIButton+MSButtonEnlargeTouchArea.h"
+#import <WebKit/WebKit.h>
+// Components
+#import "MSTabBarItem.h"
+#import "MSBarButtonItem.h"
+#import "MSLabel.h"
+#import "MSTextView.h"
+#import "MSButton.h"
+// 第三方
+#define MAS_SHORTHAND
+#define MAS_SHORTHAND_GLOBALS
+#import "Masonry.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "MJExtension.h"
+#import "MBProgressHUD.h"
+#import "MJRefresh.h"
+#import "JPUSHService.h"
+
+
+#define SCREEN_FRAME [UIScreen mainScreen].bounds
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width    // 界面宽
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height  // 界面高
+
+// 适配视图尺寸 (基于667 * 375)
+#define kScaleH                   (SCREEN_HEIGHT/667.0)
+#define kScaleW                  (SCREEN_WIDTH/375.0)
+#define KPXIMGWIDTH_UI(x)              x * kScaleW * 0.5
+#define KPXIMGWIDTH(x)              x * kScaleW
+#define kAdaptWidth(a) (SCREEN_WIDTH * a / 375)
+#define kAdaptHeight(a) (SCREEN_HEIGHT * a / 812) // 决定于设计稿 667 / 812
+/* iPhoneX */
+#define MS_iPhoneX (SCREEN_WIDTH == 375.f && SCREEN_HEIGHT == 812.f ? YES : NO)
+#define MS_iPhoneXR (SCREEN_WIDTH == 414.0f && SCREEN_HEIGHT == 896.0f ? YES : NO)
+
+// Status bar height.
+#define  MS_StatusBarHeight      ((MS_iPhoneX || MS_iPhoneXR)? 44.f : 20.f)
+
+// Navigation bar height.
+#define  MS_NavigationBarHeight  44.f
+
+// Tabbar height.
+#define  MS_TabbarHeight         ((MS_iPhoneX || MS_iPhoneXR) ? (49.f+34.f) : 49.f)
+
+// Tabbar safe bottom margin.
+#define  MS_TabbarSafeBottomMargin         ((MS_iPhoneX || MS_iPhoneXR) ? 34.f : 0.f)
+
+// Status bar & navigation bar height.
+#define  MS_StatusBarAndNavigationBarHeight  ((MS_iPhoneX || MS_iPhoneXR) ? 108.f : 64.f)
+
+
+// color
+#define ColorClear [UIColor clearColor]
+#define ColorWhite [UIColor whiteColor]
+#define COMMENCOLOR [UIColor colorWithHexString:@"#FFD524"]
+#define TEXTPRICEREDCOLOR [UIColor colorWithHexString:@"#FF3B30"]
+#define TEXTBGYELLOWCOLOR [UIColor colorWithHexString:@"#FEFCF3"]
+
+#define TEXTCOLOR [UIColor colorWithHexString:@"#333333"]
+#define SUBTEXTCOLOR [UIColor colorWithHexString:@"#999999"]
+#define LINECOLOR [UIColor colorWithHexString:@"#EEEEEE"]
+#define BLUECOLOR [UIColor colorWithHexString:@"#28A4FC"]
+#define PINKCOLOR [UIColor colorWithHexString:@"#FF8AC3"]
+#define IMGBGCOLOR [UIColor colorWithHexString:@"#F1F8FF"]
+#define BUTTONBORDERCOLOR [UIColor colorWithHexString:@"#FFB166"]
+// font
+#define FONTBOLDFACEWITHSIZE(x) [UIFont fontWithName:@"Helvetica-Bold" size:x]
+
+
+
+#define webUrl @"http://172.16.100.141:9090/jnmz/assessOrganize/assess"  // web地址
+#define kRequestURL(a) [NSString stringWithFormat:@"%@/%@", kServerURL, a]
+#define kPaymentURL(a) [NSString stringWithFormat:@"%@/%@", kPServerURL, a]
+// 自动化切换debug/release配置
+#ifndef __OPTIMIZE__
+#define kServerURL @"http://47.97.5.140:8081"       // 测试环境域名地址
+#define kPServerURL @"https://dev.portal.futurefertile.com"       // 支付域名
+#define NSLog(format, ...) printf("[%s] %s [第%d行] %s\n", __TIME__, __FUNCTION__, __LINE__, [[NSString stringWithFormat:format, ## __VA_ARGS__] UTF8String]);
+
+#else
+#define kServerURL @"http://47.97.5.140:8081"          // 正式环境域名地址
+#define kPServerURL @"https://dev.portal.futurefertile.com"       // 支付域名
+#endif
+
+#define kPageNumber 10
+
+#define kString(a) ((a == nil || [a isKindOfClass:[NSNull class]]) ? @"" : a)
+
+#endif /* PrefixHeader_pch */

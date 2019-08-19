@@ -7,8 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "AKT_BaseWebVC.h"
+#import "AktLoginCmd.h"
 
-@interface ViewController ()
+@interface ViewController ()<UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *tfActivityCode;
+@property (weak, nonatomic) IBOutlet UITextField *tfUserCode;
+@property (weak, nonatomic) IBOutlet UIButton *btnLogin;
 
 @end
 
@@ -19,5 +24,13 @@
     // Do any additional setup after loading the view.
 }
 
+- (IBAction)btnLoginUserAction:(id)sender {
+//    [[[AktLoginCmd alloc] init] requestLoginWithPhone:self.tfActivityCode.text code:self.tfUserCode.text success:^(id Object) {
+//        NSDictionary *dic = Object;
+//    }];
+    
+    AKT_BaseWebVC *web = [AKT_BaseWebVC new];
+    [self.navigationController pushViewController:web animated:YES];
+}
 
 @end

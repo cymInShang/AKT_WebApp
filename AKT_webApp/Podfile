@@ -1,0 +1,23 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform:ios,'8.0'
+
+use_frameworks!
+target "AKT_webApp" do
+
+  pod 'AFNetworking'
+  pod 'SDWebImage', '~> 3.7.4'
+  pod 'SVPullToRefresh', '~> 0.4.1'
+  pod 'SVProgressHUD'
+  pod 'SBJson'
+  
+  pod 'MBProgressHUD'
+  pod 'MJRefresh'
+  pod 'Masonry', '~> 1.1.0'
+  pod 'MJExtension'
+  
+  pod 'JPush'
+  pod 'JSONKit-NoWarning', '~> 1.2'
+  pod 'JSONModel'
+  pod 'WebViewJavascriptBridge', '~> 4.1.4'
+
+end
