@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *methodName;             //接口方法名
 @property (nonatomic, assign) BOOL isPayment;
 
-- (void)saveUserID:(NSNumber *)userID;
+- (void)saveUserID:(NSString *)OId accessorId:(NSString *)Aid;
 - (void)DeleteUserID;
 
 - (void)doGetRequestWithParameters:(id)parameters success:(void(^)(id))succ failure:(nullable void(^)(id))fail;

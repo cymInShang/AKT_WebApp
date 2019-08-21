@@ -23,10 +23,10 @@
 }
 
 - (IBAction)btnLoginUserAction:(id)sender {
-    //    [[[AktLoginCmd alloc] init] requestLoginWithPhone:self.tfActivityCode.text code:self.tfUserCode.text success:^(id Object) {
-    //        NSDictionary *dic = Object;
-    //    }];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [[[AktLoginCmd alloc] init] requestLoginWithPhone:self.tfActivityCode.text code:self.tfUserCode.text success:^(id Object) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+
 }
 /*
 #pragma mark - Navigation
