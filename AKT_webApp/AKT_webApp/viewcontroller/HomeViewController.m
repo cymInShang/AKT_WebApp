@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    NSString *str = [[NSUserDefaults standardUserDefaults] objectForKey:@"AId"];
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"AId"]) {
         [self setWebProgressWithWebView:self.webViewBg];
         [self setBridgeWithWebView:self.webViewBg withRefresh:YES];

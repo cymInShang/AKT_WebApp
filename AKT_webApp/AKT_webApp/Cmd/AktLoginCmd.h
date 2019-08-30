@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "PFBaseCmd.h"
 
-#define Akt_Login @"/jnmz/assessOrganize/checkLogin"
+#define Akt_Login @"jnmz/assessOrganize/checkLogin"
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -24,7 +24,9 @@
 
 - (IBAction)btnLoginUserAction:(id)sender {
     [[[AktLoginCmd alloc] init] requestLoginWithPhone:self.tfActivityCode.text code:self.tfUserCode.text success:^(id Object) {
-        [self dismissViewControllerAnimated:YES completion:nil];
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"AId"] && [[NSUserDefaults standardUserDefaults] objectForKey:@"OId"]) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
     }];
 
 }
