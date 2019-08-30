@@ -21,8 +21,8 @@
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"AId"]) {
         [self setWebProgressWithWebView:self.webViewBg];
         [self setBridgeWithWebView:self.webViewBg withRefresh:YES];
-
-        [self loadWebView:webUrl];
+ NSString *strurl = [[NSString stringWithFormat:@"%@",webUrl([[NSUserDefaults standardUserDefaults] objectForKey:@"OId"], [[NSUserDefaults standardUserDefaults] objectForKey:@"AId"])] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        [self loadWebView:strurl];
     }else{
         LoginViewController *loginvc = [[LoginViewController alloc] init];
         [self.navigationController presentViewController:loginvc animated:YES completion:nil];

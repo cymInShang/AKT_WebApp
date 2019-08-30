@@ -32,12 +32,12 @@
 
 - (void)doPutRequestWithParameters:(id)parameters success:(void(^)(id))succ failure:(void(^)(id))fail{
     [[PFHttpManager sharedHttpManager] setMethod:HttpRequestMethodPUT];
-    [self doRequestWithParameters:@{@"result":parameters} success:succ failure:fail];
+    [self doRequestWithParameters:parameters success:succ failure:fail];
 }
 
 - (void)doDeleteRequestWithParameters:(id)parameters success:(void(^)(id))succ failure:(void(^)(id))fail{
     [[PFHttpManager sharedHttpManager] setMethod:HttpRequestMethodDELETE];
-    [self doRequestWithParameters:@{@"result":parameters} success:succ failure:fail];
+    [self doRequestWithParameters:parameters success:succ failure:fail];
 }
 
 - (void)doUploadFileWithFile:(id)parameters file:(NSData *)file success:(void(^)(id))succ failure:(void(^)(id))fail{

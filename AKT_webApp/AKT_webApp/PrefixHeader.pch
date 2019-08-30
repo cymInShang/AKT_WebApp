@@ -91,18 +91,18 @@
 
 
 
-#define webUrl @"http://172.16.100.141:9090/jnmz/assessOrganize/assess"  // web地址
+#define webUrl(a,b) [NSString stringWithFormat:@"http://221.214.76.70:10011/jnmz/assessOrganize/assess?organizeId=%@&assessorId=%@",a,b]  // web地址
 #define kRequestURL(a) [NSString stringWithFormat:@"%@/%@", kServerURL, a]
 #define kPaymentURL(a) [NSString stringWithFormat:@"%@/%@", kPServerURL, a]
 // 自动化切换debug/release配置
 #ifndef __OPTIMIZE__
-#define kServerURL @"http://47.97.5.140:8081"       // 测试环境域名地址
-#define kPServerURL @"https://dev.portal.futurefertile.com"       // 支付域名
+#define kServerURL @"http://221.214.76.70:10011"       // 测试环境域名地址
+#define kPServerURL @""       // 支付域名
 #define NSLog(format, ...) printf("[%s] %s [第%d行] %s\n", __TIME__, __FUNCTION__, __LINE__, [[NSString stringWithFormat:format, ## __VA_ARGS__] UTF8String]);
 
 #else
-#define kServerURL @"http://47.97.5.140:8081"          // 正式环境域名地址
-#define kPServerURL @"https://dev.portal.futurefertile.com"       // 支付域名
+#define kServerURL @"http://221.214.76.70:10011"          // 正式环境域名地址
+#define kPServerURL @""       // 支付域名
 #endif
 
 #define kPageNumber 10

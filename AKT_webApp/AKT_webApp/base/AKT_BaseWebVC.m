@@ -157,7 +157,7 @@
 }
 
 -(void)refurbishWeb{
-    NSString *strurl = [[NSString stringWithFormat:@"%@",webUrl] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *strurl = [[NSString stringWithFormat:@"%@",webUrl([[NSUserDefaults standardUserDefaults] objectForKey:@"OId"], [[NSUserDefaults standardUserDefaults] objectForKey:@"AId"])] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest * uq = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", strurl]]];
     uq.timeoutInterval = 0.3f;
     [self.webview loadRequest:uq];
