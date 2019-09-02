@@ -22,7 +22,7 @@
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"AId"]) {
         [self setWebProgressWithWebView:self.webViewBg];
         [self setBridgeWithWebView:self.webViewBg withRefresh:YES];
- NSString *strurl = [[NSString stringWithFormat:@"%@",webUrl([[NSUserDefaults standardUserDefaults] objectForKey:@"OId"], [[NSUserDefaults standardUserDefaults] objectForKey:@"AId"])] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSString *strurl = [[NSString stringWithFormat:@"%@",webUrl([[NSUserDefaults standardUserDefaults] objectForKey:@"OId"], [[NSUserDefaults standardUserDefaults] objectForKey:@"AId"])] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         [self loadWebView:strurl];
     }else{
         LoginViewController *loginvc = [[LoginViewController alloc] init];
@@ -34,6 +34,10 @@
     NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     NSLog(@"----%@",url);
     [_webViewBg loadRequest:request];
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view resignFirstResponder];
 }
 /*
 #pragma mark - Navigation

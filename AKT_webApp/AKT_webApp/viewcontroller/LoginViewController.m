@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "AktLoginCmd.h"
+#import "YWLWebBaseVC.h"
 
 @interface LoginViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *tfActivityCode;
@@ -21,15 +22,35 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.btnLogin.layer.masksToBounds = YES;
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"OId"]) {
+        self.tfActivityCode.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"OId"];
+    }
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"AId"]) {
+        self.tfUserCode.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"AId"];
+    }
 }
 
 - (IBAction)btnLoginUserAction:(id)sender {
+    [[AppDelegate sharedDelegate] showLoadingHUD:self.view msg:@""];
     [[[AktLoginCmd alloc] init] requestLoginWithPhone:self.tfActivityCode.text code:self.tfUserCode.text success:^(id Object) {
-        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"AId"] && [[NSUserDefaults standardUserDefaults] objectForKey:@"OId"]) {
-            [self dismissViewControllerAnimated:YES completion:nil];
+        NSDictionary *dic = Object;
+        if ([dic objectForKey:@"assessOrganizeId"] && [dic objectForKey:@"assessor"]) {
+            YWLWebBaseVC *webbase = [[YWLWebBaseVC alloc] init];
+            [self.navigationController pushViewController:webbase animated:YES];
         }
+        [[AppDelegate sharedDelegate] hidHUD];
     }];
 
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+     [self.tfActivityCode resignFirstResponder];
+    [self.tfUserCode resignFirstResponder];
+    [self.view endEditing:YES];
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    return [textField resignFirstResponder];
 }
 /*
 #pragma mark - Navigation

@@ -12,7 +12,7 @@
 - (void)requestLoginWithPhone:(NSString *)phone code:(NSString *)code success:(void(^)(id))succ{
     self.methodName = Akt_Login;
     [self doPostRequestWithParameters:@{@"organizeNo":phone,@"assessorNo":code} success:^(id responseObj) {
-        [self saveUserID:[responseObj objectForKey:@"organizeId"] accessorId:[responseObj objectForKey:@"assessorId"]];
+        [self saveUserID:[responseObj objectForKey:@"assessOrganizeId"] accessorId:[responseObj objectForKey:@"assessor"]];
         succ(responseObj);
     } failure:nil];
 }

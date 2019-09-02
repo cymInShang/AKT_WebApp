@@ -7,7 +7,10 @@
 //
 
 #import "AppDelegate.h"
-#import "HomeViewController.h"
+//#import "HomeViewController.h"
+//#import "AktWkWebViewController.h"
+#import "LoginViewController.h"
+#import "YWLWebBaseVC.h"
 
 @interface AppDelegate ()<MBProgressHUDDelegate>
 {
@@ -27,7 +30,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     // 根视图
-    HomeViewController *vcMain = [[HomeViewController alloc] init];
+    LoginViewController *vcMain = [[LoginViewController alloc] init];
     UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vcMain];
     nvc.navigationBarHidden = YES;
     _window.rootViewController = nvc;

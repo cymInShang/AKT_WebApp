@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)setNAVCBarHidden:(BOOL)hidden arrowHidden:(BOOL)arrowHidden title:(NSString *)title;
 - (void)setRightBtn:(NSString *)btnTitle;
-
+- (void)leftBarButtonClick;
 @end
 
 NS_ASSUME_NONNULL_END

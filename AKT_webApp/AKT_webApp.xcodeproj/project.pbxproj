@@ -121,6 +121,7 @@
 		4C1A971E230A719E002D33A6 /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A9711230A719E002D33A6 /* NJKWebViewProgressView.m */; };
 		4C1A971F230A719E002D33A6 /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A9711230A719E002D33A6 /* NJKWebViewProgressView.m */; };
 		4C1A9720230A719E002D33A6 /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A9711230A719E002D33A6 /* NJKWebViewProgressView.m */; };
+		4C9192E0231CB977002C8F78 /* YWLWebBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9192DF231CB977002C8F78 /* YWLWebBaseVC.m */; };
 		8B21DEA21022D3E27E3194CC /* Pods_AKT_webApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C004902943AA80D3A97628 /* Pods_AKT_webApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -229,6 +230,8 @@
 		4C1A970F230A719E002D33A6 /* NJKWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgress.m; sourceTree = "<group>"; };
 		4C1A9710230A719E002D33A6 /* NJKWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgress.h; sourceTree = "<group>"; };
 		4C1A9711230A719E002D33A6 /* NJKWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgressView.m; sourceTree = "<group>"; };
+		4C9192DE231CB977002C8F78 /* YWLWebBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWLWebBaseVC.h; sourceTree = "<group>"; };
+		4C9192DF231CB977002C8F78 /* YWLWebBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWLWebBaseVC.m; sourceTree = "<group>"; };
 		B0D8DAED0D8D18FBA9C0A522 /* Pods-AKT_webApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKT_webApp.release.xcconfig"; path = "Target Support Files/Pods-AKT_webApp/Pods-AKT_webApp.release.xcconfig"; sourceTree = "<group>"; };
 		B372E1F3A5CD13827FCBB73C /* Pods-AKT_webApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKT_webApp.debug.xcconfig"; path = "Target Support Files/Pods-AKT_webApp/Pods-AKT_webApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D7C004902943AA80D3A97628 /* Pods_AKT_webApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AKT_webApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -348,6 +351,8 @@
 				4C1A9670230A332A002D33A6 /* AKT_BaseViewVC.m */,
 				4C184C36230E9714005579E9 /* AktWkWebViewController.h */,
 				4C184C37230E9714005579E9 /* AktWkWebViewController.m */,
+				4C9192DE231CB977002C8F78 /* YWLWebBaseVC.h */,
+				4C9192DF231CB977002C8F78 /* YWLWebBaseVC.m */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -675,6 +680,7 @@
 				4C1A9645230A2DA7002D33A6 /* main.m in Sources */,
 				4C1A971B230A719E002D33A6 /* NJKWebViewProgress.m in Sources */,
 				4C1A96AA230A3B8D002D33A6 /* UITextView+MSPlaceholder.m in Sources */,
+				4C9192E0231CB977002C8F78 /* YWLWebBaseVC.m in Sources */,
 				4C1A96C8230A3B8E002D33A6 /* UILabel+Plus.m in Sources */,
 				4C1A96AD230A3B8D002D33A6 /* UITextView+Placeholder.m in Sources */,
 				4C1A967F230A3549002D33A6 /* PFHttpManager.m in Sources */,

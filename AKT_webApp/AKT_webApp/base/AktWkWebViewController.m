@@ -36,13 +36,16 @@
 
 #pragma mark - uiwkweb delegete
 -(void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
-    NSLog(@"页面开始加载时调用");
+    [[AppDelegate sharedDelegate] showLoadingHUD:self.view msg:@""];
+    NSLog(@"页面开始加载时调用----%@",webView.URL);
 }
 -(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
-    NSLog(@"页面加载完成之后调用");
+    NSLog(@"页面加载完成之后调用---%@",webView.URL);
+    [[AppDelegate sharedDelegate] hidHUD];
 }
 -(void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error{
     NSLog(@"页面加载失败");
+    [[AppDelegate sharedDelegate] hidHUD];
 }
 
 #pragma mark - 交互

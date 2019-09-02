@@ -116,7 +116,7 @@
 
 #pragma mark - 返回按钮的点击事件
 - (void)leftBarButtonClick {
-    [self.navigationController popViewControllerAnimated:YES];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
