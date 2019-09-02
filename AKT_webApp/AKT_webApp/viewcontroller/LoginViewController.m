@@ -28,6 +28,7 @@
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"AId"]) {
         self.tfUserCode.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"AId"];
     }
+    [self setNAVCBarHidden:YES arrowHidden:YES title:@""];
 }
 
 - (IBAction)btnLoginUserAction:(id)sender {
@@ -46,12 +47,11 @@
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
      [self.tfActivityCode resignFirstResponder];
     [self.tfUserCode resignFirstResponder];
-    [self.view endEditing:YES];
 }
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    return [textField resignFirstResponder];
-}
+//- (BOOL)textFieldShouldReturn:(UITextField *)textField
+//{
+//    return [textField resignFirstResponder];
+//}
 /*
 #pragma mark - Navigation
 

@@ -81,11 +81,10 @@
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7U-nC-OE2">
                     <rect key="frame" x="30" y="485" width="354" height="44"/>
-                    <color key="backgroundColor" red="0.54512346320000005" green="0.73566743359999998" blue="1" alpha="0.54489436619999998" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="bxQ-no-a5O"/>
                     </constraints>
-                    <state key="normal" title="登录">
+                    <state key="normal" title="登录" backgroundImage="white_button_sel">
                         <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
@@ -119,5 +118,6 @@
     </objects>
     <resources>
         <image name="LoginIcon" width="1024" height="1024"/>
+        <image name="white_button_sel" width="285" height="39"/>
     </resources>
 </document>

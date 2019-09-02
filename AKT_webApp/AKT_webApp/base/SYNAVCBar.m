@@ -91,7 +91,7 @@
 {
     if (!_imgBG) {
         _imgBG = [UIImageView new];
-        _imgBG.image = [UIImage imageNamed:@"sy-bannerkongbai"];
+//        _imgBG.image = [UIImage imageNamed:@"sy-bannerkongbai"];
 //        _imgBG.backgroundColor = TEXTCOLOR;
     }
     return _imgBG;
@@ -101,7 +101,7 @@
 {
     if (!_btnBack) {
         _btnBack = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_btnBack setBackgroundImage:[UIImage imageNamed:@"sy-fanhui"] forState:UIControlStateNormal];
+        [_btnBack setBackgroundImage:[UIImage imageNamed:@"btn_back"] forState:UIControlStateNormal];
 //        _btnBack.backgroundColor = TEXTCOLOR;
     }
     return _btnBack;

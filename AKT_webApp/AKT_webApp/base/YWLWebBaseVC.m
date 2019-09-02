@@ -56,7 +56,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
+    [self setNAVCBarHidden:YES arrowHidden:YES title:@""];
     [self.view addSubview:self.webView];
     self.webView.frame = CGRectMake(0, Akt_navHAndStatusH, SCREEN_WIDTH, SCREEN_HEIGHT-Akt_navHAndStatusH-MS_TabbarSafeBottomMargin);
 }
@@ -69,6 +69,10 @@
 - (void)leftBarButtonClick {
     if (isleft) {
           [self.webView reload];
+    }else{
+        if ([self.webView canGoBack]) {
+            [self.webView goBack];
+        }
     }
 }
 #pragma mark - WKNavigationDelegate
@@ -94,8 +98,8 @@
 }
 // 在收到响应后，决定是否跳转
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler{
-    
-    NSLog(@"%@",navigationResponse.response.URL.absoluteString);
+    [self setNAVCBarHidden:NO arrowHidden:NO title:@""];
+    NSLog(@"=====%@",navigationResponse.response.URL.absoluteString);
     //允许跳转
     decisionHandler(WKNavigationResponsePolicyAllow);
     //不允许跳转
@@ -108,6 +112,8 @@
     NSString *strtel = [NSString stringWithFormat:@"%@",navigationAction.request.URL.absoluteString];
     if ([strtel containsString:@"view=success"]) {
         isleft = YES;
+    }else{
+        
     }
     //允许跳转
     decisionHandler(WKNavigationActionPolicyAllow);
