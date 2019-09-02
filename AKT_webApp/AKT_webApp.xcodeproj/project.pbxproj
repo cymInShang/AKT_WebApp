@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C184C38230E9714005579E9 /* AktWkWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C184C37230E9714005579E9 /* AktWkWebViewController.m */; };
+		4C184C39230E9714005579E9 /* AktWkWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C184C37230E9714005579E9 /* AktWkWebViewController.m */; };
+		4C184C3A230E9714005579E9 /* AktWkWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C184C37230E9714005579E9 /* AktWkWebViewController.m */; };
 		4C1A9637230A2D9E002D33A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A9636230A2D9E002D33A6 /* AppDelegate.m */; };
 		4C1A963A230A2D9E002D33A6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A9639230A2D9E002D33A6 /* ViewController.m */; };
 		4C1A963D230A2D9E002D33A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C1A963B230A2D9E002D33A6 /* Main.storyboard */; };
@@ -139,6 +142,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C184C36230E9714005579E9 /* AktWkWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AktWkWebViewController.h; sourceTree = "<group>"; };
+		4C184C37230E9714005579E9 /* AktWkWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AktWkWebViewController.m; sourceTree = "<group>"; };
 		4C1A9632230A2D9E002D33A6 /* AKT_webApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AKT_webApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C1A9635230A2D9E002D33A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4C1A9636230A2D9E002D33A6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -341,6 +346,8 @@
 				4C1A966B230A3300002D33A6 /* AKT_BaseWebVC.m */,
 				4C1A966F230A332A002D33A6 /* AKT_BaseViewVC.h */,
 				4C1A9670230A332A002D33A6 /* AKT_BaseViewVC.m */,
+				4C184C36230E9714005579E9 /* AktWkWebViewController.h */,
+				4C184C37230E9714005579E9 /* AktWkWebViewController.m */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -664,6 +671,7 @@
 				4C1A9677230A351C002D33A6 /* MSBaseModel.m in Sources */,
 				4C1A96BC230A3B8E002D33A6 /* UILabel+MSLabel.m in Sources */,
 				4C1A9682230A3549002D33A6 /* PFBaseCmd.m in Sources */,
+				4C184C38230E9714005579E9 /* AktWkWebViewController.m in Sources */,
 				4C1A9645230A2DA7002D33A6 /* main.m in Sources */,
 				4C1A971B230A719E002D33A6 /* NJKWebViewProgress.m in Sources */,
 				4C1A96AA230A3B8D002D33A6 /* UITextView+MSPlaceholder.m in Sources */,
@@ -716,6 +724,7 @@
 				4C1A96B7230A3B8E002D33A6 /* UIView+Layer.m in Sources */,
 				4C1A9672230A332A002D33A6 /* AKT_BaseViewVC.m in Sources */,
 				4C1A964F230A2DA7002D33A6 /* AKT_webAppTests.m in Sources */,
+				4C184C39230E9714005579E9 /* AktWkWebViewController.m in Sources */,
 				4C1A9688230A383D002D33A6 /* SYNAVCBar.m in Sources */,
 				4C1A96CC230A3B8E002D33A6 /* UIButton+MSButtonEnlargeTouchArea.m in Sources */,
 				4C1A96B4230A3B8E002D33A6 /* UIView+MasonryPlus.m in Sources */,
@@ -756,6 +765,7 @@
 				4C1A96B8230A3B8E002D33A6 /* UIView+Layer.m in Sources */,
 				4C1A9673230A332A002D33A6 /* AKT_BaseViewVC.m in Sources */,
 				4C1A965A230A2DA7002D33A6 /* AKT_webAppUITests.m in Sources */,
+				4C184C3A230E9714005579E9 /* AktWkWebViewController.m in Sources */,
 				4C1A9689230A383D002D33A6 /* SYNAVCBar.m in Sources */,
 				4C1A96CD230A3B8E002D33A6 /* UIButton+MSButtonEnlargeTouchArea.m in Sources */,
 				4C1A96B5230A3B8E002D33A6 /* UIView+MasonryPlus.m in Sources */,

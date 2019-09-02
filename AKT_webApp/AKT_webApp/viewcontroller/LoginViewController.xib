@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Syv-Dq-3uZ">
-                    <rect key="frame" x="30" y="100" width="354" height="60"/>
+                    <rect key="frame" x="30" y="270" width="354" height="60"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="评估组织编号:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGA-zM-Epa">
                             <rect key="frame" x="0.0" y="8" width="109" height="44"/>
@@ -51,7 +51,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Otl-gV-epg">
-                    <rect key="frame" x="30" y="175" width="354" height="60"/>
+                    <rect key="frame" x="30" y="345" width="354" height="60"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="评估员编号:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eD8-ig-lke">
                             <rect key="frame" x="8" y="8" width="91.5" height="44"/>
@@ -80,7 +80,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7U-nC-OE2">
-                    <rect key="frame" x="30" y="315" width="354" height="44"/>
+                    <rect key="frame" x="30" y="485" width="354" height="44"/>
                     <color key="backgroundColor" red="0.54512346320000005" green="0.73566743359999998" blue="1" alpha="0.54489436619999998" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="bxQ-no-a5O"/>
@@ -92,15 +92,24 @@
                         <action selector="btnLoginUserAction:" destination="-1" eventType="touchUpInside" id="aty-wQ-Alj"/>
                     </connections>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginIcon" translatesAutoresizingMaskIntoConstraints="NO" id="4Um-Kz-Tnv">
+                    <rect key="frame" x="147" y="100" width="120" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="OBL-Q2-eJS"/>
+                        <constraint firstAttribute="width" constant="120" id="sG9-oM-AXF"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="4Um-Kz-Tnv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0Vs-sF-Yor"/>
                 <constraint firstAttribute="trailing" secondItem="Syv-Dq-3uZ" secondAttribute="trailing" constant="30" id="48g-fH-aGb"/>
+                <constraint firstItem="Syv-Dq-3uZ" firstAttribute="top" secondItem="4Um-Kz-Tnv" secondAttribute="bottom" constant="50" id="JB3-GO-z2w"/>
                 <constraint firstItem="Otl-gV-epg" firstAttribute="trailing" secondItem="Syv-Dq-3uZ" secondAttribute="trailing" id="Mcj-RW-JYI"/>
-                <constraint firstItem="Syv-Dq-3uZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="UYd-jx-bfX"/>
                 <constraint firstItem="B7U-nC-OE2" firstAttribute="leading" secondItem="Otl-gV-epg" secondAttribute="leading" id="Uq3-rU-hbv"/>
                 <constraint firstItem="B7U-nC-OE2" firstAttribute="trailing" secondItem="Otl-gV-epg" secondAttribute="trailing" id="V2u-hu-elD"/>
                 <constraint firstItem="Otl-gV-epg" firstAttribute="leading" secondItem="Syv-Dq-3uZ" secondAttribute="leading" id="W3o-ZR-CZZ"/>
+                <constraint firstItem="4Um-Kz-Tnv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="W6q-xO-K4k"/>
                 <constraint firstItem="B7U-nC-OE2" firstAttribute="top" secondItem="Otl-gV-epg" secondAttribute="bottom" constant="80" id="bpA-n2-hrK"/>
                 <constraint firstItem="Otl-gV-epg" firstAttribute="top" secondItem="Syv-Dq-3uZ" secondAttribute="bottom" constant="15" id="oud-Xx-JgO"/>
                 <constraint firstItem="Syv-Dq-3uZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="wg8-6t-7qy"/>
@@ -108,4 +117,7 @@
             <point key="canvasLocation" x="34.782608695652179" y="34.821428571428569"/>
         </view>
     </objects>
+    <resources>
+        <image name="LoginIcon" width="1024" height="1024"/>
+    </resources>
 </document>
