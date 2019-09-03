@@ -68,13 +68,11 @@
 // Tabbar safe bottom margin.
 #define  MS_TabbarSafeBottomMargin         ((MS_iPhoneX || MS_iPhoneXR) ? 34.f : 0.f)
 
-// Status bar & navigation bar height.
-#define  MS_StatusBarAndNavigationBarHeight  ((MS_iPhoneX || MS_iPhoneXR) ? 108.f : 64.f)
 //获取状态栏的rect
 #define Akt_statusH ([[UIApplication sharedApplication] statusBarFrame].size.height)
 //获取导航栏的rect
 #define Akt_navH (self.navigationController.navigationBar.frame.size.height)
-
+// 导航栏+状态栏  高度
 #define Akt_navHAndStatusH (Akt_statusH + Akt_navH)
 
 // color

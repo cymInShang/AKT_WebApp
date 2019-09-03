@@ -67,11 +67,24 @@
 
 #pragma mark - left
 - (void)leftBarButtonClick {
-    if (isleft) {
-          [self.webView reload];
+   /* if (isleft) {
     }else{
         if ([self.webView canGoBack]) {
             [self.webView goBack];
+        }
+    }*/
+    
+    NSLog(@"----list====%lu",(unsigned long)_webView.backForwardList.backList.count);
+    NSLog(@"----item%@",_webView.backForwardList.currentItem);
+    
+    WKNavigation *navigation = [self.webView goBack];
+    NSInteger offset = self.webView.backForwardList.backList.count;
+    if (isleft)
+    {
+        if (self.webView.backForwardList.backList.count >= offset)
+        {
+            WKBackForwardListItem *item1 = [self.webView.backForwardList itemAtIndex:-offset];
+            navigation = [self.webView goToBackForwardListItem:item1];
         }
     }
 }
@@ -98,8 +111,9 @@
 }
 // 在收到响应后，决定是否跳转
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler{
-    [self setNAVCBarHidden:NO arrowHidden:NO title:@""];
+   
     NSLog(@"=====%@",navigationResponse.response.URL.absoluteString);
+    NSString *strtel = [NSString stringWithFormat:@"%@",navigationResponse.response.URL.absoluteString];
     //允许跳转
     decisionHandler(WKNavigationResponsePolicyAllow);
     //不允许跳转
@@ -108,13 +122,31 @@
 // 在发送请求之前，决定是否跳转
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
     
-    NSLog(@"%@",navigationAction.request.URL.absoluteString);
+    NSLog(@"%@------",navigationAction.request.URL.absoluteString);
     NSString *strtel = [NSString stringWithFormat:@"%@",navigationAction.request.URL.absoluteString];
+    /**导航栏返回按钮**/
     if ([strtel containsString:@"view=success"]) {
         isleft = YES;
     }else{
-        
+        isleft = NO;
     }
+    //*导航栏是显示控制**/
+    if ([strtel containsString:@"/assessOrganize/assess?"]) {
+        [self setNAVCBarHidden:YES arrowHidden:YES title:@""];
+    }else{
+        [self setNAVCBarHidden:NO arrowHidden:NO title:@""];
+    }
+    
+//    if (navigationAction.navigationType==WKNavigationTypeBackForward) {                  //判断是返回类型
+//        if (webView.backForwardList.backList.count>0) {                                  //得到栈里面的list
+//            WKBackForwardListItem * item = webView.backForwardList.currentItem;          //得到现在加载的list
+//            for (WKBackForwardListItem * backItem in webView.backForwardList.backList) { //循环遍历，得到你想退出到
+//                //添加判断条件
+//                [webView goToBackForwardListItem:[webView.backForwardList.backList.firstObject]];
+//            }
+//        }
+//    }
+//
     //允许跳转
     decisionHandler(WKNavigationActionPolicyAllow);
     //不允许跳转
@@ -172,7 +204,7 @@
         // 导航代理
         _webView.navigationDelegate = self;
         // 是否允许手势左滑返回上一级, 类似导航控制的左滑返回
-        _webView.allowsBackForwardNavigationGestures = YES;
+        _webView.allowsBackForwardNavigationGestures = NO;
         
         NSString *strurl = [[NSString stringWithFormat:@"%@",webUrl([[NSUserDefaults standardUserDefaults] objectForKey:@"OId"], [[NSUserDefaults standardUserDefaults] objectForKey:@"AId"])] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:strurl]]];

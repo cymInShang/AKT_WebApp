@@ -45,7 +45,7 @@
 - (void)initNAVCBar
 {
     [self.view addSubview:self.NAVCBar];
-    self.NAVCBar.frame = CGRectMake(0, 0, SCREEN_WIDTH, MS_StatusBarAndNavigationBarHeight);
+    self.NAVCBar.frame = CGRectMake(0, 0, SCREEN_WIDTH, Akt_navHAndStatusH);
 }
 
 - (void)setNAVCBarHidden:(BOOL)hidden arrowHidden:(BOOL)arrowHidden title:(NSString *)title
@@ -57,7 +57,7 @@
 
 - (CGFloat)NAVCHeight
 {
-    return MS_StatusBarAndNavigationBarHeight;
+    return Akt_navHAndStatusH;
 }
 
 - (SYNAVCBar *)NAVCBar
